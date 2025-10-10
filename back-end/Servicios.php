@@ -2,7 +2,7 @@
 
 include_once 'usuarios.php';
 
-$usuarios = new Usuarios();
+//$usuarios = new Usuarios();
 
 $nombreServicio = $_GET['nombreservicio'];
 
