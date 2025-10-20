@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { AuthService } from '../../services/api';
 import './login.css';
 
+
+
+
 function Login() {
     const [formData, setFormData] = useState({
         email: '',
@@ -50,19 +53,19 @@ function Login() {
     const redirectByRole = (rol) => {
         switch(rol) {
             case 'administrador':
-                window.location.href = '/admin-dashboard';
+                window.location.href = '/panel_admin';
                 break;
             case 'operador':
-                window.location.href = '/operador-dashboard';
+                window.location.href = '/panel_oper';
                 break;
             case '745': // Código del rol del Administrador
-                window.location.href = '/admin-panel';
+                window.location.href = '/panel_admin';
                 break;
             case '125': // Código del rol del Operador
-                window.location.href = '/operador-panel';
+                window.location.href = '/panel_oper';
                 break;
             default:
-                window.location.href = '/dashboard';
+                window.location.href = 'panel_admin';
         }
     };
 
@@ -71,14 +74,15 @@ function Login() {
         alert(`${title}: ${message}`);
         
     };
+ 
+    
 
     return (
         <div className="login-container">
             <div className="login-form">
-                <div className="login-hearder">
+                <div className="login-header">
                 <h1 style={{textAlign: 'center'}}>Iniciar Sesión</h1>
-                <br>
-                </br>
+                <br/>
                 
                 {error && (
                     <div className="alert alert-error">
